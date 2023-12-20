@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
-import Image from 'next/image'
+import Footer from './components/shared/Footer'
+import Header from './components/shared/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,19 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header className='bg-sky-600 px-5 py-3 flex gap-5 justify-center'>
-          <Link href={'/'}>Home</Link>
-          <Link href={'/todo'}>Todo App</Link>
-          <Link href={'contact-us'}>Contact Us</Link>
-        </header>
-
-        {children}
-
-        <footer>
-        <p> &copy; PIAIC219867 All Rights Reserved </p>
-        </footer>
-        </body>
+       <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    
+  </head>
+      <body className={inter.className} >
+          <Header />
+               {children}
+          <Footer />
+      </body>
+          
     </html>
   )
 }
